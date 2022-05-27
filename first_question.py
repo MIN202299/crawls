@@ -410,12 +410,12 @@ window['url'] = '/api/' + 'match' + '/1', request = function() {
 from lxml import etree
 import requests
 from fake_useragent import UserAgent
-import execjs
+# import execjs
 import os
 import subprocess
 import json
 import demjson
-import time
+# import time
 
 def getHeaders(page):
     ua = UserAgent(verify_ssl=False).random
