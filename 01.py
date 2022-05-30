@@ -414,7 +414,7 @@ from fake_useragent import UserAgent
 import os
 import subprocess
 import json
-import demjson
+import demjson3
 # import time
 
 def getHeaders(page):
@@ -469,14 +469,14 @@ if __name__ == '__main__':
     data = []
 
     for i in range(1, 6):
-        cmd = 'node ./inspirations/01_plus.js'
+        cmd = 'node ./inspirations/01/01_plus.js'
         p1 = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
         msg_content = ''
         for line in p1.stdout:
             l = line.decode(encoding="utf-8", errors="ignore")
             msg_content += l
         p1.wait()
-        m = demjson.decode(msg_content)['m']
+        m = demjson3.decode(msg_content)['m']
         print(m)
         data += getJSONData(i, m)
 
